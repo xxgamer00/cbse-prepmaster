@@ -2,7 +2,7 @@
   "apps": [
     {
       "appId": "cbse-prepmaster",
-      "root": ".",
+      "root": "client",
       "dependencyInstallCommand": "npm install --legacy-peer-deps",
       "webBuildCommand": "npm run build",
       "androidBuildConfig": {
