@@ -2,10 +2,7 @@
   "name": "cbse-prepmaster",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "client",
-    "server"
-  ],
+  "type": "module",
   "scripts": {
     "start": "cd client && npm start",
     "build": "cd client && npm run build",
@@ -33,5 +30,11 @@
     "@ionic/cli": "^7.1.1",
     "cordova-res": "^0.15.4",
     "native-run": "^1.7.3"
+  },
+  "ionic": {
+    "hooks": {
+      "preInstall": "cd client",
+      "preBuild": "cd client"
+    }
   }
 }
