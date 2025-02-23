@@ -15,7 +15,8 @@
     "android": "cd client && npm run android",
     "android:build": "cd client && npm run android:build",
     "android:live": "cd client && npm run android:live",
-    "sync": "cd client && npm run sync"
+    "sync": "cd client && npm run sync",
+    "postinstall": "cd client && npm install"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.1",
