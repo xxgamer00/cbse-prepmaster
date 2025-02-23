@@ -1,0 +1,27 @@
+{
+  "apps": [
+    {
+      "appId": "cbse-prepmaster",
+      "root": ".",
+      "dependencyInstallCommand": "npm install --legacy-peer-deps",
+      "webBuildCommand": "npm run build",
+      "androidBuildConfig": {
+        "platform": "android",
+        "buildType": "debug",
+        "packageId": "com.cbse.prepmaster",
+        "versionName": "1.0.0",
+        "versionCode": 1,
+        "minSdkVersion": 21,
+        "targetSdkVersion": 33,
+        "gradleVersion": "7.3.1"
+      },
+      "environments": {
+        "production": {
+          "env": {
+            "REACT_APP_API_URL": "https://api.cbseprepmaster.com"
+          }
+        }
+      }
+    }
+  ]
+}

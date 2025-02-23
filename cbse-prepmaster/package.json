@@ -2,80 +2,35 @@
   "name": "cbse-prepmaster",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "ionic:build": "cd client && npm run build",
+    "ionic:serve": "cd client && npm start",
+    "resources": "cd client && npm run resources",
+    "android": "cd client && npm run android",
+    "android:build": "cd client && npm run android:build",
+    "android:live": "cd client && npm run android:live",
+    "sync": "cd client && npm run sync"
+  },
   "dependencies": {
     "@capacitor/android": "^7.0.1",
     "@capacitor/app": "^7.0.0",
-    "@capacitor/camera": "^7.0.0",
-    "@capacitor/cli": "^7.0.1",
     "@capacitor/core": "^7.0.1",
-    "@capacitor/filesystem": "^7.0.0",
-    "@capacitor/haptics": "^7.0.0",
-    "@capacitor/keyboard": "^7.0.0",
-    "@capacitor/local-notifications": "^7.0.0",
-    "@capacitor/network": "^7.0.0",
-    "@capacitor/preferences": "^7.0.0",
-    "@capacitor/push-notifications": "^7.0.0",
-    "@capacitor/splash-screen": "^7.0.0",
-    "@capacitor/status-bar": "^7.0.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
-    "@mui/icons-material": "^5.14.18",
-    "@mui/material": "^5.14.18",
-    "@reduxjs/toolkit": "^1.9.7",
-    "axios": "^1.6.2",
-    "chart.js": "^4.4.0",
-    "date-fns": "^2.30.0",
-    "formik": "^2.4.5",
-    "i18next": "^23.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.1.3",
-    "react-router-dom": "^6.19.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^3.5.0",
-    "yup": "^1.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "ionic:build": "npm run build",
-    "ionic:serve": "npm run start",
-    "resources": "capacitor-resources -p android",
-    "android": "ionic capacitor run android",
-    "android:build": "ionic capacitor build android",
-    "android:live": "ionic capacitor run android -l --external",
-    "sync": "ionic capacitor sync"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
-    "@capacitor/assets": "^3.0.1",
-    "@capacitor/resources": "^3.0.1",
+    "@capacitor/cli": "^7.0.1",
     "@ionic/cli": "^7.1.1",
     "cordova-res": "^0.15.4",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.53.0",
-    "native-run": "^1.7.3",
-    "rimraf": "^5.0.5"
+    "native-run": "^1.7.3"
   }
 }
