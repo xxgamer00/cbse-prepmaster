@@ -1,56 +1,50 @@
-name: Android Build
+name: Build Android
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build APK
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
-
+    
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: './client/package-lock.json'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install Dependencies
+        run: |
+          cd client
+          npm install
+          npm install -g @ionic/cli native-run cordova-res
+          ionic cap sync
 
-    - name: Build React app
-      run: npm run build
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Make Gradlew Executable
+        run: |
+          cd client/android
+          chmod +x ./gradlew
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v2
+      - name: Build APK
+        run: |
+          cd client/android
+          ./gradlew assembleDebug
 
-    - name: Install Ionic and Capacitor
-      run: |
-        npm install -g @ionic/cli @capacitor/cli
-        ionic cap sync
-
-    - name: Build Android Debug APK
-      run: |
-        cd android
-        chmod +x gradlew
-        ./gradlew assembleDebug
-
-    - name: Upload APK
-      uses: actions/upload-artifact@v3
-      with:
-        name: app-debug
-        path: client/android/app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-debug
+          path: client/android/app/build/outputs/apk/debug/app-debug.apk
