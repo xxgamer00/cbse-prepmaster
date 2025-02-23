@@ -1,0 +1,78 @@
+{
+  "short_name": "PrepMaster",
+  "name": "CBSE PrepMaster",
+  "description": "Test preparation app for CBSE Class 8 & 9 students",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "prefer_related_applications": false,
+  "categories": ["education", "productivity"],
+  "screenshots": [
+    {
+      "src": "screenshots/login.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Login Screen"
+    },
+    {
+      "src": "screenshots/dashboard.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Student Dashboard"
+    },
+    {
+      "src": "screenshots/test.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Test Interface"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Take Test",
+      "short_name": "Test",
+      "description": "Start a new test",
+      "url": "/tests",
+      "icons": [{ "src": "icons/test.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Results",
+      "short_name": "Results",
+      "description": "View your test results",
+      "url": "/results",
+      "icons": [{ "src": "icons/results.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "dir": "ltr",
+  "lang": "en",
+  "scope": "/",
+  "serviceworker": {
+    "src": "service-worker.js",
+    "scope": "/"
+  }
+}
