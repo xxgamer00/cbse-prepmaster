@@ -2,9 +2,10 @@
   "apps": [
     {
       "appId": "cbse-prepmaster",
-      "root": "client",
-      "dependencyInstallCommand": "npm install --legacy-peer-deps",
-      "webBuildCommand": "npm run build",
+      "root": ".",
+      "srcDir": "client",
+      "dependencyInstallCommand": "npm install",
+      "webBuildCommand": "cd client && npm run build",
       "androidBuildConfig": {
         "platform": "android",
         "buildType": "debug",
@@ -14,6 +15,14 @@
         "minSdkVersion": 21,
         "targetSdkVersion": 33,
         "gradleVersion": "7.3.1"
+      },
+      "ios": {
+        "platform": "ios",
+        "buildType": "debug"
+      },
+      "hooks": {
+        "preInstall": "cd client",
+        "preBuild": "cd client"
       },
       "environments": {
         "production": {
