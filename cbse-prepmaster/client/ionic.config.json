@@ -1,0 +1,19 @@
+{
+  "name": "CBSE PrepMaster",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "cbse-prepmaster",
+  "root": ".",
+  "appflow": {
+    "org": "xxgamer00",
+    "app_id": "cbse-prepmaster",
+    "native_config": {
+      "android": {
+        "platform": "android",
+        "packageId": "com.cbse.prepmaster"
+      }
+    }
+  }
+}
