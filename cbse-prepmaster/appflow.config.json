@@ -4,25 +4,27 @@
       "appId": "cbse-prepmaster",
       "root": ".",
       "srcDir": "client",
-      "dependencyInstallCommand": "npm install",
+      "dependencyInstallCommand": "npm install && cd client && npm install",
       "webBuildCommand": "cd client && npm run build",
-      "androidBuildConfig": {
-        "platform": "android",
-        "buildType": "debug",
-        "packageId": "com.cbse.prepmaster",
-        "versionName": "1.0.0",
-        "versionCode": 1,
-        "minSdkVersion": 21,
-        "targetSdkVersion": 33,
-        "gradleVersion": "7.3.1"
-      },
-      "ios": {
-        "platform": "ios",
-        "buildType": "debug"
+      "buildConfig": {
+        "android": {
+          "platform": "android",
+          "buildType": "debug",
+          "packageId": "com.cbse.prepmaster",
+          "versionName": "1.0.0",
+          "versionCode": 1,
+          "minSdkVersion": 21,
+          "targetSdkVersion": 33
+        }
       },
       "hooks": {
-        "preInstall": "cd client",
-        "preBuild": "cd client"
+        "preInstall": [
+          "npm install -g @ionic/cli",
+          "cd client"
+        ],
+        "preBuild": [
+          "cd client"
+        ]
       },
       "environments": {
         "production": {
